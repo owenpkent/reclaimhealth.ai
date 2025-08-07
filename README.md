@@ -106,6 +106,10 @@ Modify the Tailwind classes in each component to adjust the design.
 └── package.json          # Dependencies and scripts
 ```
 
-## License
+## Copyright
 
-MIT License - feel free to use this template for your own projects.
+Copyright (c) 2025 Owen Kent. All rights reserved.
+
+This software and associated files are proprietary and confidential. 
+No part of this software may be used, copied, modified, merged, published, 
+distributed, sublicensed, or sold without prior written permission from the copyright holder.
