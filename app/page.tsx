@@ -1,12 +1,11 @@
-import Hero from '@/components/sections/Hero'
-import Problem from '@/components/sections/Problem'
-import Solution from '@/components/sections/Solution'
-import Features from '@/components/sections/Features'
-import Impact from '@/components/sections/Impact'
-import Credibility from '@/components/sections/Credibility'
-import PartnerCTA from '@/components/sections/PartnerCTA'
-import SignupForm from '@/components/sections/SignupForm'
-import Footer from '@/components/sections/Footer'
+import { Hero } from '@/components/sections/Hero'
+import { Problem } from '@/components/sections/Problem'
+import { Solution } from '@/components/sections/Solution'
+import { Features } from '@/components/sections/Features'
+import { Impact } from '@/components/sections/Impact'
+import { Credibility } from '@/components/sections/Credibility'
+import { GoogleFormSignup } from '@/components/sections/GoogleFormSignup'
+import { Footer } from '@/components/sections/Footer'
 
 export default function Home() {
   return (
@@ -17,8 +16,7 @@ export default function Home() {
       <Features />
       <Impact />
       <Credibility />
-      <PartnerCTA />
-      <SignupForm />
+      <GoogleFormSignup />
       <Footer />
     </main>
   )

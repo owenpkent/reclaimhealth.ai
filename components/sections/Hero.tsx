@@ -1,23 +1,36 @@
 import { Button } from '@/components/ui/button'
 
-export default function Hero() {
+export function Hero() {
+  const scrollToSignup = () => {
+    const signupSection = document.getElementById('signup-section')
+    if (signupSection) {
+      signupSection.scrollIntoView({ behavior: 'smooth' })
+    }
+  }
+
   return (
-    <section className="relative bg-gradient-to-br from-blue-50 to-indigo-100 py-20 lg:py-32">
-      <div className="container mx-auto px-4">
-        <div className="max-w-4xl mx-auto text-center">
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-gray-900 mb-6 leading-tight">
+    <section className="bg-gradient-to-br from-blue-600 to-blue-800 text-white py-20">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center">
+          <h1 className="text-4xl md:text-6xl font-bold mb-6">
             Denied by a bot? Fight back with ours.
           </h1>
-          <p className="text-xl md:text-2xl text-gray-600 mb-8 max-w-3xl mx-auto">
+          <p className="text-xl md:text-2xl mb-8 text-blue-100">
             AI-powered appeals to reclaim your right to care.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <Button size="lg" className="text-lg px-8 py-4 bg-blue-600 hover:bg-blue-700">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <button
+              onClick={scrollToSignup}
+              className="bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-blue-50 transition-colors"
+            >
               Join the Waitlist
-            </Button>
-            <Button variant="outline" size="lg" className="text-lg px-8 py-4">
+            </button>
+            <button
+              onClick={() => document.getElementById('how-it-works')?.scrollIntoView({ behavior: 'smooth' })}
+              className="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-blue-600 transition-colors"
+            >
               Learn How It Works
-            </Button>
+            </button>
           </div>
         </div>
       </div>

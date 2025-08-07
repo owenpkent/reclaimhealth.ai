@@ -1,131 +1,111 @@
 # ReclAIm Landing Page
 
-A production-ready landing page for ReclAIm, an AI-powered platform that helps patients fight back against insurance denials and reclaim their right to care.
+A simple, high-conversion landing page for ReclAIm - AI-powered appeals to reclaim your right to care.
 
 ## Features
 
-- **Next.js 14** with App Router
-- **Tailwind CSS** for styling
-- **shadcn/ui** components for consistent design
-- **Netlify Forms** integration with honeypot spam protection
-- **Mobile-first** responsive design
-- **SEO optimized** with proper meta tags
-- **Accessible** design following WCAG guidelines
+- **Simple Landing Page**: Clean, mobile-first design
+- **Google Forms Integration**: Easy lead collection without complex backend
+- **Responsive Design**: Works perfectly on all devices
+- **Fast Performance**: Built with Next.js 14 and Tailwind CSS
+- **SEO Optimized**: Comprehensive meta tags and structured data
 
 ## Pages
 
 - **Home** (`/`) - Main landing page with all sections
-- **Privacy** (`/privacy`) - Privacy policy
-- **Terms** (`/terms`) - Terms of service
-- **Contact** (`/contact`) - Contact form and company info
-- **Thank You** (`/thank-you`) - Post-signup confirmation
+- **Privacy** (`/privacy`) - Privacy policy page
+- **Terms** (`/terms`) - Terms of service page
 
 ## Sections
 
-1. **Hero** - Main headline and CTAs
-2. **Problem** - Statistics about insurance denials
-3. **Solution** - How ReclAIm works
-4. **Features** - Platform capabilities
-5. **Impact** - Market statistics and goals
-6. **Credibility** - Founder and company info
-7. **Partner CTA** - Call for partnerships and investment
-8. **Signup Form** - Lead capture with role selection
-9. **Footer** - Links and legal disclaimers
+- **Hero** - Main headline and CTAs
+- **Problem** - Insurance denial statistics and impact
+- **Solution** - How ReclAIm works (4-step process)
+- **Features** - Key product features with icons
+- **Impact** - Market size and year 1 goals
+- **Credibility** - Founder info and partnerships
+- **Google Form Signup** - Lead collection form
+- **Footer** - Links and contact info
+
+## Tech Stack
+
+- **Next.js 14** - React framework with App Router
+- **Tailwind CSS** - Utility-first CSS framework
+- **TypeScript** - Type safety
+- **Google Forms** - Lead collection (no backend needed)
 
 ## Getting Started
 
-### Prerequisites
+1. **Install dependencies**:
+   ```bash
+   npm install
+   ```
 
-- Node.js 18+ 
-- npm or yarn
+2. **Run development server**:
+   ```bash
+   npm run dev
+   ```
 
-### Installation
+3. **Open** [http://localhost:3000](http://localhost:3000)
 
-1. Clone the repository:
-```bash
-git clone https://github.com/your-username/reclaim-landing.git
-cd reclaim-landing
-```
+## Google Forms Setup
 
-2. Install dependencies:
-```bash
-npm install
-```
+1. Create a Google Form with fields for:
+   - Name
+   - Email
+   - Role (Patient, Caregiver, Advocate, Hospital Admin, Investor, Other)
+   - Optional message
 
-3. Run the development server:
-```bash
-npm run dev
-```
+2. Get the embed URL from Google Forms
 
-4. Open [http://localhost:3000](http://localhost:3000) in your browser.
+3. Update the `GoogleFormSignup.tsx` component with your form URL:
+   ```tsx
+   src="https://docs.google.com/forms/d/e/YOUR_FORM_ID/viewform?embedded=true"
+   ```
 
 ## Deployment
 
-### Netlify
-
-This project is configured for deployment on Netlify with:
-
-- `netlify.toml` configuration
-- Next.js plugin
-- Form handling
-- Honeypot spam protection
-
-To deploy:
+### Netlify (Recommended)
 
 1. Connect your GitHub repository to Netlify
 2. Build command: `npm run build`
 3. Publish directory: `.next`
-4. Environment variables (if needed) can be set in Netlify dashboard
+4. Deploy automatically on push to main branch
 
-### Build for Production
+### Vercel
 
-```bash
-npm run build
-npm start
-```
-
-## Form Integration
-
-The signup form includes:
-
-- **Netlify Forms** integration
-- **Honeypot protection** against spam
-- **Role selection** dropdown
-- **Required fields** validation
-- **Privacy notice** microcopy
-
-Form submissions will appear in your Netlify dashboard under the "Forms" tab.
+1. Import your GitHub repository to Vercel
+2. Deploy automatically on push to main branch
 
 ## Customization
 
-### Content
+### Colors
+Update the Tailwind config in `tailwind.config.js` to match your brand colors.
 
-All content is located in the component files under `components/sections/`. Update the text directly in these files.
+### Content
+Edit the content in each section component in `components/sections/`.
 
 ### Styling
+Modify the Tailwind classes in each component to adjust the design.
 
-The project uses Tailwind CSS with custom CSS variables. Main styling is in:
-- `app/globals.css` - Global styles and CSS variables
-- `tailwind.config.js` - Tailwind configuration
-- Component-specific styles in each component
+## Project Structure
 
-### Components
-
-UI components are built with shadcn/ui and located in `components/ui/`. These can be customized or extended as needed.
-
-## Tech Stack
-
-- **Framework**: Next.js 14 (App Router)
-- **Styling**: Tailwind CSS
-- **Components**: shadcn/ui + Radix UI
-- **Forms**: Netlify Forms
-- **Deployment**: Netlify
-- **Language**: TypeScript
+```
+├── app/                    # Next.js App Router pages
+│   ├── globals.css        # Global styles
+│   ├── layout.tsx         # Root layout with SEO
+│   ├── page.tsx           # Home page
+│   ├── privacy/           # Privacy policy
+│   └── terms/             # Terms of service
+├── components/
+│   ├── sections/          # Landing page sections
+│   └── ui/               # Reusable UI components
+├── lib/
+│   └── utils.ts          # Utility functions
+├── public/               # Static assets
+└── package.json          # Dependencies and scripts
+```
 
 ## License
 
-This project is proprietary to ReclAIm. All rights reserved.
-
-## Contact
-
-For questions about this landing page, contact hello@reclaim.health.
+MIT License - feel free to use this template for your own projects.
