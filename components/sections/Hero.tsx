@@ -1,3 +1,5 @@
+'use client'
+
 export function Hero() {
   const scrollToSignup = () => {
     const signupSection = document.getElementById('signup-section')
