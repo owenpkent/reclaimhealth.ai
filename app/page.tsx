@@ -6,10 +6,12 @@ import { Impact } from '@/components/sections/Impact'
 import { Credibility } from '@/components/sections/Credibility'
 import { GoogleFormSignup } from '@/components/sections/GoogleFormSignup'
 import { Footer } from '@/components/sections/Footer'
+import { ThemeToggle } from '@/components/ui/ThemeToggle'
 
 export default function Home() {
   return (
     <main className="min-h-screen">
+      <ThemeToggle />
       <Hero />
       <Problem />
       <Solution />
