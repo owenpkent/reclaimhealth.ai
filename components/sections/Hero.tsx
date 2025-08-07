@@ -1,5 +1,3 @@
-import { Button } from '@/components/ui/button'
-
 export function Hero() {
   const scrollToSignup = () => {
     const signupSection = document.getElementById('signup-section')
