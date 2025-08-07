@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ReclAIm - Form Test</title>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px; }
+        .form-group { margin-bottom: 15px; }
+        label { display: block; margin-bottom: 5px; font-weight: bold; }
+        input, select, textarea { width: 100%; padding: 8px; border: 1px solid #ddd; border-radius: 4px; }
+        button { background: #2563eb; color: white; padding: 10px 20px; border: none; border-radius: 4px; cursor: pointer; }
+        button:hover { background: #1d4ed8; }
+    </style>
+</head>
+<body>
+    <h1>ReclAIm Form Test</h1>
+    <p>This page is for testing form functionality. The main application is built with Next.js.</p>
+    
+    <form name="signup" method="POST" data-netlify="true" data-netlify-honeypot="bot-field">
+        <div style="display: none;">
+            <input name="bot-field" />
+        </div>
+        <input type="hidden" name="form-name" value="signup" />
+        
+        <div class="form-group">
+            <label for="name">Name *</label>
+            <input type="text" id="name" name="name" required>
+        </div>
+        
+        <div class="form-group">
+            <label for="email">Email *</label>
+            <input type="email" id="email" name="email" required>
+        </div>
+        
+        <div class="form-group">
+            <label for="role">I'm a... *</label>
+            <select id="role" name="role" required>
+                <option value="">Select your role</option>
+                <option value="patient">Patient</option>
+                <option value="caregiver">Caregiver</option>
+                <option value="advocate">Advocate</option>
+                <option value="hospital-admin">Hospital Admin</option>
+                <option value="investor">Investor</option>
+                <option value="other">Other</option>
+            </select>
+        </div>
+        
+        <div class="form-group">
+            <label for="message">Message (Optional)</label>
+            <textarea id="message" name="message" rows="4"></textarea>
+        </div>
+        
+        <button type="submit">Join the Movement</button>
+    </form>
+</body>
+</html>
