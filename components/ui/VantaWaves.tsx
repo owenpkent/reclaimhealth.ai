@@ -20,10 +20,10 @@ export function VantaWaves({ children, className = '' }: VantaWavesProps) {
           const THREE = await import('three')
           
           // Import Vanta WAVES effect
-          const VANTA = await import('vanta/dist/vanta.waves.min.js')
+          const VantaWaves = await import('vanta/dist/vanta.waves.min.js')
           
           // Initialize Vanta effect
-          vantaEffect.current = VANTA.default({
+          vantaEffect.current = VantaWaves.default({
             el: vantaRef.current,
             THREE: THREE,
             mouseControls: true,

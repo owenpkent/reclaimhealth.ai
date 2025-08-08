@@ -20,11 +20,7 @@ declare module 'vanta/dist/vanta.waves.min.js' {
     destroy(): void
   }
 
-  const VANTA: {
-    default: (options: VantaWavesOptions) => VantaEffect
-  }
-
-  export = VANTA
+  export default function(options: VantaWavesOptions): VantaEffect
 }
 
 declare module 'three' {
