@@ -115,7 +115,7 @@
                     shininess: 30.00,
                     waveHeight: 15.00,
                     waveSpeed: 0.75,
-                    zoom: 0.65
+                    zoom: 1.2
                 });
                 
                 isVantaLoaded = true;
