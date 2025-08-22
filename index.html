@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ReclAIm - AI-powered appeals to reclaim your right to care</title>
+    <meta name="description" content="Denied by a bot? Fight back with ours. AI-powered appeals to reclaim your right to care.">
+    
+    <!-- Tailwind CSS v3 -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            50: '#eff6ff',
+                            100: '#dbeafe',
+                            200: '#bfdbfe',
+                            300: '#93c5fd',
+                            400: '#60a5fa',
+                            500: '#3b82f6',
+                            600: '#2563eb',
+                            700: '#1d4ed8',
+                            800: '#1e40af',
+                            900: '#1e3a8a',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+</head>
+<body class="bg-white dark:bg-gray-900 text-gray-900 dark:text-white">
+    <!-- Theme Toggle -->
+    <div class="fixed top-4 right-4 z-50">
+        <button id="theme-toggle" class="p-2 rounded-lg bg-white dark:bg-gray-800 shadow-lg border border-gray-200 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors">
+            <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+            </svg>
+            <svg id="theme-toggle-light-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                <path d="M10 2L13.09 8.26L20 9L14 14.74L15.18 21.02L10 17.77L4.82 21.02L6 14.74L0 9L6.91 8.26L10 2Z"></path>
+            </svg>
+        </button>
+    </div>
+
+    <!-- Hero Section with Vanta Waves Background -->
+    <section id="hero" class="relative h-80 md:h-96 flex items-center text-white overflow-hidden">
+        <!-- Vanta Waves Container -->
+        <div id="vanta-waves" class="absolute inset-0 bg-gradient-to-br from-blue-600 to-blue-800"></div>
+        
+        <!-- Hero Content -->
+        <div class="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+            <div class="text-center">
+                <!-- Logo -->
+                <div class="mb-8">
+                    <img src="public/logo.png" alt="ReclAIm Logo" class="mx-auto h-24 md:h-32 w-auto">
+                </div>
+                <h1 class="text-4xl md:text-6xl font-bold mb-6 drop-shadow-lg">
+                    Denied by a bot? Fight back with ours.
+                </h1>
+                <p class="text-xl md:text-2xl mb-8 text-blue-100 drop-shadow-md">
+                    AI-powered appeals to reclaim your right to care.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <button id="join-waitlist-btn" class="bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-blue-50 transition-colors shadow-lg">
+                        Join the Waitlist
+                    </button>
+                    <button id="learn-more-btn" class="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-blue-600 transition-colors shadow-lg">
+                        Learn How It Works
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Problem Section -->
+    <section id="how-it-works" class="py-16 bg-white dark:bg-gray-900">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-4">
+                    The Problem
+                </h2>
+            </div>
+            <div class="grid md:grid-cols-2 gap-8 items-center">
+                <div>
+                    <div class="space-y-6">
+                        <div class="flex items-start space-x-4">
+                            <div class="flex-shrink-0 w-8 h-8 bg-red-100 dark:bg-red-900 rounded-full flex items-center justify-center">
+                                <span class="text-red-600 dark:text-red-400 font-bold">1</span>
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-2">
+                                    Over 238 million insurance claims are denied annually in the U.S.
+                                </h3>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-4">
+                            <div class="flex-shrink-0 w-8 h-8 bg-red-100 dark:bg-red-900 rounded-full flex items-center justify-center">
+                                <span class="text-red-600 dark:text-red-400 font-bold">2</span>
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-2">
+                                    Most patients never appeal, even though about 90 percent of appeals succeed.
+                                </h3>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-4">
+                            <div class="flex-shrink-0 w-8 h-8 bg-red-100 dark:bg-red-900 rounded-full flex items-center justify-center">
+                                <span class="text-red-600 dark:text-red-400 font-bold">3</span>
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-2">
+                                    Insurers now use opaque AI to deny claims without human oversight.
+                                </h3>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-4">
+                            <div class="flex-shrink-0 w-8 h-8 bg-red-100 dark:bg-red-900 rounded-full flex items-center justify-center">
+                                <span class="text-red-600 dark:text-red-400 font-bold">4</span>
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-2">
+                                    Disabled, chronically ill, and low-income patients are hit the hardest.
+                                </h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-red-50 dark:bg-red-900/20 p-8 rounded-lg">
+                    <h3 class="text-xl font-bold text-red-800 dark:text-red-200 mb-4">
+                        The Reality
+                    </h3>
+                    <p class="text-red-700 dark:text-red-300">
+                        Insurance companies are using AI to deny claims faster than ever, 
+                        leaving patients without the care they need and deserve.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solution Section -->
+    <section id="solution" class="py-16 bg-blue-50 dark:bg-blue-900/20">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-4">
+                    The Solution
+                </h2>
+                <p class="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+                    ReclAIm uses AI to fight back against insurance denials and restore access to care.
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-sm">
+                    <div class="w-12 h-12 bg-blue-100 dark:bg-blue-900 rounded-lg flex items-center justify-center mb-4">
+                        <span class="text-blue-600 dark:text-blue-400 text-xl font-bold">1</span>
+                    </div>
+                    <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-2">
+                        Upload your denial letter securely
+                    </h3>
+                    <p class="text-gray-600 dark:text-gray-300">
+                        HIPAA-compliant document upload with encrypted storage
+                    </p>
+                </div>
+                
+                <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-sm">
+                    <div class="w-12 h-12 bg-blue-100 dark:bg-blue-900 rounded-lg flex items-center justify-center mb-4">
+                        <span class="text-blue-600 dark:text-blue-400 text-xl font-bold">2</span>
+                    </div>
+                    <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-2">
+                        Generate a personalized, legally sound appeal
+                    </h3>
+                    <p class="text-gray-600 dark:text-gray-300">
+                        AI-powered appeal letter generator with state-specific legal logic
+                    </p>
+                </div>
+                
+                <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-sm">
+                    <div class="w-12 h-12 bg-blue-100 dark:bg-blue-900 rounded-lg flex items-center justify-center mb-4">
+                        <span class="text-blue-600 dark:text-blue-400 text-xl font-bold">3</span>
+                    </div>
+                    <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-2">
+                        Trigger peer review and state DOI complaints
+                    </h3>
+                    <p class="text-gray-600 dark:text-gray-300">
+                        Automated peer review and Department of Insurance complaint filing
+                    </p>
+                </div>
+                
+                <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-sm">
+                    <div class="w-12 h-12 bg-blue-100 dark:bg-blue-900 rounded-lg flex items-center justify-center mb-4">
+                        <span class="text-blue-600 dark:text-blue-400 text-xl font-bold">4</span>
+                    </div>
+                    <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-2">
+                        Track progress in your dashboard
+                    </h3>
+                    <p class="text-gray-600 dark:text-gray-300">
+                        Real-time tracking of appeal status and outcomes
+                    </p>
+                </div>
+            </div>
+            
+            <div class="mt-12 bg-blue-600 dark:bg-blue-800 text-white p-8 rounded-lg">
+                <div class="text-center">
+                    <h3 class="text-xl font-bold mb-4">
+                        Human-centered design, scalable for individuals and institutions
+                    </h3>
+                    <p class="text-blue-100 dark:text-blue-200">
+                        Built with accessibility in mind, supporting both individual patients and healthcare organizations
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Key Features Section -->
+    <section id="features" class="py-16 bg-gray-900 text-white">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold mb-4">
+                    Key Features
+                </h2>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- AI-powered appeal letter generator -->
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-green-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">
+                        AI-powered appeal letter generator
+                    </h3>
+                    <p class="text-gray-300">
+                        Generate personalized, legally sound appeals using advanced AI
+                    </p>
+                </div>
+
+                <!-- State-specific legal and insurance logic -->
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 2l3.09 6.26L22 9l-5 4.74L18.18 21 12 17.77 5.82 21 7 13.74 2 9l6.91-1.74L12 2z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">
+                        State-specific legal and insurance logic
+                    </h3>
+                    <p class="text-gray-300">
+                        Tailored to each state's regulations and insurance requirements
+                    </p>
+                </div>
+
+                <!-- Peer review + DOI complaint automation -->
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-purple-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm3.5 6L12 10.5 8.5 8 12 5.5 15.5 8zM12 13.5l3.5 2.5L12 18.5 8.5 16l3.5-2.5z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">
+                        Peer review + DOI complaint automation
+                    </h3>
+                    <p class="text-gray-300">
+                        Automated peer review and Department of Insurance complaint filing
+                    </p>
+                </div>
+
+                <!-- Secure document upload & encrypted storage -->
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-yellow-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zM12 17c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zM15.1 8H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">
+                        Secure document upload & encrypted storage
+                    </h3>
+                    <p class="text-gray-300">
+                        HIPAA-compliant document management with end-to-end encryption
+                    </p>
+                </div>
+
+                <!-- Dashboard for tracking appeal progress -->
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-indigo-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM9 17H7v-7h2v7zm4 0h-2V7h2v10zm4 0h-2v-4h2v4z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">
+                        Dashboard for tracking appeal progress
+                    </h3>
+                    <p class="text-gray-300">
+                        Real-time tracking and status updates for all your appeals
+                    </p>
+                </div>
+
+                <!-- Partner portal for hospitals & advocacy orgs -->
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-red-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M16 4c0-1.11.89-2 2-2s2 .89 2 2-.89 2-2 2-2-.89-2-2zM4 18v-4h3v-3c0-1.1.9-2 2-2h2c1.1 0 2 .9 2 2v3h3v4H4zm16-5.8c-.94.94-2.06.94-3 0-.94-.94-.94-2.06 0-3s2.06-.94 3 0c.94.94.94 2.06 0 3z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">
+                        Partner portal for hospitals & advocacy orgs
+                    </h3>
+                    <p class="text-gray-300">
+                        Specialized tools for healthcare organizations and advocacy groups
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Impact Section -->
+    <section id="impact" class="py-16 bg-green-50 dark:bg-green-900/20">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-4">
+                    Impact & Market
+                </h2>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-white dark:bg-gray-800 p-8 rounded-lg shadow-sm">
+                    <h3 class="text-2xl font-bold text-green-600 dark:text-green-400 mb-4">
+                        90 million Americans
+                    </h3>
+                    <p class="text-lg text-gray-700 dark:text-gray-300 mb-4">
+                        rely on Medicaid and face frequent denials
+                    </p>
+                    <div class="bg-green-100 dark:bg-green-900/30 p-4 rounded-lg">
+                        <p class="text-green-800 dark:text-green-200 font-medium">
+                            These patients need our help the most
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="bg-white dark:bg-gray-800 p-8 rounded-lg shadow-sm">
+                    <h3 class="text-2xl font-bold text-red-600 dark:text-red-400 mb-4">
+                        $60+ billion
+                    </h3>
+                    <p class="text-lg text-gray-700 dark:text-gray-300 mb-4">
+                        in care is lost annually due to unchallenged denials
+                    </p>
+                    <div class="bg-red-100 dark:bg-red-900/30 p-4 rounded-lg">
+                        <p class="text-red-800 dark:text-red-200 font-medium">
+                            Money that should be going to patient care
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-12 bg-white dark:bg-gray-800 p-8 rounded-lg shadow-sm">
+                <div class="text-center">
+                    <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-6">
+                        Year 1 Goals
+                    </h3>
+                    <div class="grid md:grid-cols-3 gap-6">
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-blue-600 dark:text-blue-400 mb-2">500,000</div>
+                            <div class="text-gray-600 dark:text-gray-300">Appeals</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-green-600 dark:text-green-400 mb-2">$100M+</div>
+                            <div class="text-gray-600 dark:text-gray-300">Care Restored</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-purple-600 dark:text-purple-400 mb-2">10+</div>
+                            <div class="text-gray-600 dark:text-gray-300">Partnerships</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Credibility Section -->
+    <section id="credibility" class="py-16 bg-gray-900 text-white">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold mb-4">
+                    Credibility
+                </h2>
+            </div>
+            <div class="grid md:grid-cols-2 gap-12">
+                <!-- Founder Section -->
+                <div class="bg-gray-800 p-8 rounded-lg">
+                    <h3 class="text-2xl font-bold mb-4">
+                        Founder: Steve Way
+                    </h3>
+                    <p class="text-gray-300 mb-6">
+                        Actor, disability advocate, healthcare justice leader
+                    </p>
+                    <div class="bg-gray-700 p-6 rounded-lg">
+                        <h4 class="text-lg font-semibold text-blue-400 mb-3">
+                            Why Steve?
+                        </h4>
+                        <p class="text-gray-300">
+                            As someone who has experienced the healthcare system firsthand, Steve understands the challenges patients face and is committed to using technology to level the playing field.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Advisory Board & Partners Section -->
+                <div class="bg-gray-800 p-8 rounded-lg">
+                    <h3 class="text-2xl font-bold mb-6">
+                        Advisory Board & Partners
+                    </h3>
+                    <div class="grid grid-cols-2 gap-6">
+                        <!-- Advisory Board -->
+                        <div class="text-center">
+                            <div class="w-16 h-16 bg-blue-600 rounded-lg flex items-center justify-center mx-auto mb-3">
+                                <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M12 2l3.09 6.26L22 9l-5 4.74L18.18 21 12 17.77 5.82 21 7 13.74 2 9l6.91-1.74L12 2z"/>
+                                </svg>
+                            </div>
+                            <h4 class="font-semibold">Advisory Board</h4>
+                        </div>
+
+                        <!-- Partners -->
+                        <div class="text-center">
+                            <div class="w-16 h-16 bg-green-600 rounded-lg flex items-center justify-center mx-auto mb-3">
+                                <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M16 4c0-1.11.89-2 2-2s2 .89 2 2-.89 2-2 2-2-.89-2-2zM4 18v-4h3v-3c0-1.1.9-2 2-2h2c1.1 0 2 .9 2 2v3h3v4H4zm16-5.8c-.94.94-2.06.94-3 0-.94-.94-.94-2.06 0-3s2.06-.94 3 0c.94.94.94 2.06 0 3z"/>
+                                </svg>
+                            </div>
+                            <h4 class="font-semibold">Partners</h4>
+                        </div>
+
+                        <!-- Press Mentions -->
+                        <div class="text-center">
+                            <div class="w-16 h-16 bg-purple-600 rounded-lg flex items-center justify-center mx-auto mb-3">
+                                <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM9 17H7v-7h2v7zm4 0h-2V7h2v10zm4 0h-2v-4h2v4z"/>
+                                </svg>
+                            </div>
+                            <h4 class="font-semibold">Press Mentions</h4>
+                        </div>
+
+                        <!-- Awards -->
+                        <div class="text-center">
+                            <div class="w-16 h-16 bg-yellow-600 rounded-lg flex items-center justify-center mx-auto mb-3">
+                                <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M5 16L3 5l5.5 1L12 4l3.5 2L21 5l-2 11H5zm2.7-2h8.6l.9-5.4-2.1-.4L12 6l-3.1 2.2-2.1.4L7.7 14z"/>
+                                </svg>
+                            </div>
+                            <h4 class="font-semibold">Awards</h4>
+                        </div>
+                    </div>
+                    <p class="text-gray-400 text-sm text-center mt-6">
+                        Placeholder logos for advisory board, partners, and press mentions
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Signup Section -->
+    <section id="signup-section" class="py-16 bg-gray-50 dark:bg-gray-800">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-4">
+                    Join the Movement
+                </h2>
+                <p class="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+                    Be among the first to fight back against insurance denials with AI-powered appeals. 
+                    Sign up for early access and updates.
+                </p>
+            </div>
+            
+            <div class="bg-white dark:bg-gray-900 rounded-lg shadow-lg p-8">
+                <div class="text-center mb-6">
+                    <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-2">
+                        Get Early Access
+                    </h3>
+                    <p class="text-gray-600 dark:text-gray-300">
+                        We respect your privacy. We do not sell your data.
+                    </p>
+                </div>
+                
+                <!-- Google Form Embed -->
+                <div class="w-full">
+                    <iframe 
+                        src="https://docs.google.com/forms/d/e/1FAIpQLSf8K9X7YZ2M3N4P5Q6R7S8T9U0V1W2X3Y4Z5A6B7C8D9E0F1G/viewform?embedded=true" 
+                        width="100%" 
+                        height="600" 
+                        frameborder="0" 
+                        marginheight="0" 
+                        marginwidth="0"
+                        class="w-full"
+                        title="ReclAIm Signup Form">
+                        Loading…
+                    </iframe>
+                </div>
+                
+                <div class="text-center mt-6">
+                    <p class="text-sm text-gray-500 dark:text-gray-400">
+                        Not legal advice. For informational purposes only.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div class="md:col-span-2">
+                    <h3 class="text-2xl font-bold mb-4">ReclAIm</h3>
+                    <p class="text-gray-300 mb-4">
+                        AI-powered appeals to reclaim your right to care.
+                    </p>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Legal</h4>
+                    <ul class="space-y-2">
+                        <li><a href="/privacy" class="text-gray-300 hover:text-white transition-colors">Privacy Policy</a></li>
+                        <li><a href="/terms" class="text-gray-300 hover:text-white transition-colors">Terms of Service</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Contact</h4>
+                    <ul class="space-y-2">
+                        <li><a href="/contact" class="text-gray-300 hover:text-white transition-colors">Get in Touch</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center">
+                <p class="text-gray-400">
+                    © 2024 ReclAIm. All rights reserved.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
